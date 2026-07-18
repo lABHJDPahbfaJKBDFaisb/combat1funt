@@ -25,6 +25,7 @@
 *.a
 *.la
 *.lo
+*.history
 
 # Shared objects (inc. Windows DLLs)
 *.dll
