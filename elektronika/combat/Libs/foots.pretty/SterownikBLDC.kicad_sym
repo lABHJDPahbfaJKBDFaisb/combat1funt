@@ -150,7 +150,7 @@
 			(pin output line
 				(at -5.08 -10.16 90)
 				(length 2.54)
-				(name "+"
+				(name "PWM"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -168,7 +168,7 @@
 			(pin output line
 				(at -1.27 -10.16 90)
 				(length 2.54)
-				(name "PWM"
+				(name "+"
 					(effects
 						(font
 							(size 1.27 1.27)
