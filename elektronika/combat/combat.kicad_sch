@@ -6248,6 +6248,16 @@
 	)
 	(wire
 		(pts
+			(xy 74.93 109.22) (xy 74.93 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3adec283-dbee-4bd7-92d2-bbdcdbe4e7d3")
+	)
+	(wire
+		(pts
 			(xy 246.38 138.43) (xy 250.19 138.43)
 		)
 		(stroke
@@ -7308,16 +7318,6 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 104.14) (xy 74.93 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea13617a-8414-46de-b327-33dd590fa787")
-	)
-	(wire
-		(pts
 			(xy 60.96 40.64) (xy 60.96 46.355)
 		)
 		(stroke
@@ -8042,7 +8042,7 @@
 	)
 	(global_label "+3.3V"
 		(shape input)
-		(at 74.93 105.41 90)
+		(at 74.93 104.14 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8052,7 +8052,7 @@
 		)
 		(uuid "5f51f852-3243-4cf8-a4e4-0f82396d5ae8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 74.93 96.74 90)
+			(at 74.93 95.47 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9979,7 +9979,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2ed250e0-0315-4241-a49b-30baff1b4610")
 		(property "Reference" "S1"
 			(at 25.4 36.83 0)
@@ -9992,7 +9991,7 @@
 			)
 		)
 		(property "Value" "Tactile Button, 160gf"
-			(at 25.4 39.37 0)
+			(at 21.082 48.768 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12846,7 +12845,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d5adf496-c88a-4fd8-862e-fe4da32a4cb8")
 		(property "Reference" "S2"
 			(at 44.45 36.83 0)
@@ -12859,7 +12857,7 @@
 			)
 		)
 		(property "Value" "Tactile Button, 160gf"
-			(at 44.45 39.37 0)
+			(at 38.608 48.768 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14076,7 +14074,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 211.7852 63.5 0)
 			(hide yes)
 			(show_name no)
