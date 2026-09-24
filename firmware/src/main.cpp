@@ -2,6 +2,7 @@
 #include "config.h"
 #include "crsf.h"
 #include "motors.h"
+#include "weapon.h"
 
 const int melody[] = {523, 659, 784, 1047, 784}; // C5 E5 G5 C6 G5
 const int noteDurationMs = 150;
@@ -17,7 +18,8 @@ void playStartupMelody() {
 
 void setup() {
   motorsBegin(); //bezpieczny stan silnikow;
-  
+  weaponBegin();
+  setToneChannel(TONE_LEDC_CH);
   Serial.begin(115200);
   delay(1500);
 
@@ -37,7 +39,7 @@ void loop() {
 
   if (!crsfLinkOk()) {
     motorsStop();   // failsafe: brak łącza -> napęd stoi
-    // tu później: stop broni
+    weaponStop();   // i broń też
     delay(5);
     return;
   }
@@ -47,9 +49,10 @@ void loop() {
   float throttle = crsfToFloat(crsfGetChannel(CH_THROTTLE));
   motorsDrive(throttle, steering);
 
-  // --- broń: dojdzie w weapon.cpp ---
-  // float weapon = crsfToFloatUnipolar(crsfGetChannel(CH_WEAPON));
-  // bool  armed  = crsfToFloatUnipolar(crsfGetChannel(CH_ARM)) > 0.5f;
+  // --- broń: lewy drążek + przełącznik ARM (kanał 6) ---
+  float weaponThrottle = crsfToFloatUnipolar(crsfGetChannel(CH_WEAPON));
+  bool  armSwitch      = crsfToFloatUnipolar(crsfGetChannel(CH_ARM)) > 0.75f;
+  weaponUpdate(weaponThrottle, armSwitch);
 
   delay(4);  // ~250 Hz pętli sterującej
 }

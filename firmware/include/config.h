@@ -15,6 +15,12 @@
 
 // --- ESC broni (BLDC), sygnał serwo PWM ---
 #define ESC_WEAPON_PIN 21
+#define ESC_PWM_FREQ 50 //standardowy sygnal servo 50hz;
+#define ESC_PWM_BITS      14    // rozdzielczość: ~0,3 us na krok
+#define ESC_LEDC_CH       2      // kanał 2 -> inny timer niż napęd (kanały 0/1)
+#define ESC_PULSE_MIN     1000   // [us] gaz zero / uzbrajanie
+#define ESC_PULSE_MAX     2000   // [us] pełny gaz
+#define WEAPON_RAMP_RATE  0.02f  // max zmiana mocy na iterację pętli (~0,2 s od 0 do 100%)
 
 // --- Odbiornik ELRS (CRSF) po UART ---
 #define CRSF_RX_PIN 18   // ESP32 RX <- TX odbiornika
@@ -23,6 +29,7 @@
 
 // --- Buzzer startowy ---
 #define BUZZER_PIN 42
+#define TONE_LEDC_CH 6   // kanał dla tone() — osobny timer, żeby nie psuł PWM napędu
 
 // --- Mapowanie kanałów CRSF (indeksy 0-15, AETR, Mode 2) ---
 #define CH_STEERING   0   // prawy drążek poziomo: skręt
